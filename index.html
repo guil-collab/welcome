@@ -1,96 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GuilTeach — Aprende sobre el audio</title>
-  <meta name="description" content="Colección de micrositios GuilTeach para aprender sobre el audio: ondas, fase, conversiones y más." />
-
+  <meta name="description" content="Colección de micrositios GuilTeach para aprender sobre el audio: ondas, fase, conversiones y más.">
   <style>
     :root{
-      --bg:#0b0f14; --ink:#f2f4fa; --muted:#9aa6be; --card:#101726; --accent:#7aa2ff;
-      --shadow:0 10px 28px rgba(0,0,0,.4); --radius:16px;
+      --bg:#0b0f14;
+      --ink:#f2f4fa;
+      --muted:#9aa6be;
+      --card:#101726;
+      --accent:#7aa2ff;
+      --shadow:0 10px 28px rgba(0,0,0,.4);
+      --radius:16px;
     }
     *{box-sizing:border-box}
-
     body{
-      margin:0; font-family:sans-serif; background:var(--bg); color:var(--ink);
-      line-height:1.4; padding:30px; display:flex; flex-direction:column; align-items:center;
+      margin:0;
+      font-family:sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.4;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
-
-    h1{margin:0 0 10px; font-size:28px}
-    p{margin:0 0 30px; color:var(--muted)}
-
+    h1{margin:0 0 10px;font-size:28px}
+    p{margin:0 0 30px;color:var(--muted)}
     .grid{
-      display:grid; gap:20px; width:100%; max-width:900px;
+      display:grid;
+      gap:20px;
+      width:100%;
+      max-width:900px;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     }
-
     .card{
-      background:var(--card); padding:20px; border-radius:var(--radius);
-      text-decoration:none; color:inherit; box-shadow:var(--shadow);
-      transition:.2s; display:flex; flex-direction:column; justify-content:space-between;
+      background:var(--card);
+      padding:20px;
+      border-radius:var(--radius);
+      text-decoration:none;
+      color:inherit;
+      box-shadow:var(--shadow);
+      transition:.2s;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
-
     .card:hover{
       transform:translateY(-4px);
       box-shadow:0 16px 32px rgba(0,0,0,.6);
     }
-
-    .title{font-size:18px; font-weight:600; margin-bottom:8px}
-    .desc{font-size:14px; color:var(--muted)}
-
+    .title{
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .desc{
+      font-size:14px;
+      color:var(--muted);
+    }
     footer{
-      margin-top:40px; font-size:12px; color:var(--muted);
+      margin-top:40px;
+      font-size:12px;
+      color:var(--muted);
     }
   </style>
 </head>
-
 <body>
-
   <h1>GuilTeach</h1>
   <p>Aprende sobre el audio a través de micrositios interactivos</p>
 
   <div class="grid">
-
-    <!-- ONDA π (usa el dominio de producción onda-pi.vercel.app) -->
+    <!-- Onda π -->
     <a class="card" href="https://onda-pi.vercel.app" target="_blank">
       <div class="title">Onda π</div>
       <div class="desc">Visualizador de ondas y senoides.</div>
     </a>
 
-    <!-- FASE (usa el dominio de producción fase-opal.vercel.app) -->
+    <!-- Fase -->
     <a class="card" href="https://fase-opal.vercel.app" target="_blank">
       <div class="title">Fase</div>
       <div class="desc">Explora sumas, desfases y cancelación.</div>
     </a>
 
-    <!-- CONVERSIÓN (ajusta esta URL si tienes otro proyecto definitivo) -->
+    <!-- Conversión -->
     <a class="card" href="https://adconversions-delta.vercel.app" target="_blank">
       <div class="title">Conversión</div>
       <div class="desc">Muestreo, bits y formatos digitales.</div>
     </a>
 
-    <!-- NUEVAS MINIWEBS -->
+    <!-- Vinilos: volvemos a la URL que sabes que funciona -->
+    <a class="card" href="https://vinilos-14ry0jl9p-guils-projects-ef57c01d.vercel.app/dual-deck-tempo-helper-v21-tap-avg4.html" target="_blank">
+      <div class="title">Vinilos</div>
+      <div class="desc">Dual Deck Tempo Helper para mezclar vinilos.</div>
+    </a>
 
+    <!-- Resto de miniwebs -->
     <a class="card" href="https://onda2armonicos.vercel.app" target="_blank">
-      <div class="title">Superposición de Ondas</div>
-      <div class="desc">Explora sumas de armónicos y patrones de onda.</div>
+      <div class="title">Onda 2 Armónicos</div>
+      <div class="desc">Visualiza ondas con armónicos.</div>
     </a>
 
     <a class="card" href="https://curvadefase.vercel.app" target="_blank">
       <div class="title">Curva de Fase</div>
-      <div class="desc">Guía interactiva de fase y tiempo en audio.</div>
+      <div class="desc">Genera y analiza curvas de fase.</div>
     </a>
 
     <a class="card" href="https://tabladesfase.vercel.app" target="_blank">
       <div class="title">Tabla de Fase</div>
-      <div class="desc">Valores de desfase clave por frecuencia.</div>
+      <div class="desc">Observa la tabla de desfases.</div>
     </a>
 
     <a class="card" href="https://graficapresionatomo.vercel.app" target="_blank">
-      <div class="title">Presión del Sonido</div>
-      <div class="desc">Visualización de presión y densidad en el medio.</div>
+      <div class="title">Gráfica Presión Átomo</div>
+      <div class="desc">Explora la gráfica de presión en un átomo.</div>
     </a>
 
-    <a class="card" href="https
+    <a class="card" href="https://visualizadordefase3.vercel.app" target="_blank">
+      <div class="title">Visualizador de Fase</div>
+      <div class="desc">Interactúa con el visualizador de fase.</div>
+    </a>
+  </div>
+
+  <footer>
+    © <span id="yr"></span> GuilTeach — Aprende sobre el audio
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
