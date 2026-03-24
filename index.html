@@ -4,132 +4,184 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GuilTeach — Aprende sobre el audio</title>
-  <meta name="description" content="Colección de micrositios GuilTeach para aprender sobre el audio: ondas, fase, conversiones y más.">
+  <meta name="description" content="Colección de micrositios GuilTeach para aprender sobre el audio.">
   <style>
-    :root{
-      --bg:#0b0f14;
-      --ink:#f2f4fa;
-      --muted:#9aa6be;
-      --card:#101726;
-      --accent:#7aa2ff;
-      --shadow:0 10px 28px rgba(0,0,0,.4);
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Inter:wght@400;600&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0}
     body{
-      margin:0;
-      font-family:sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.4;
-      padding:30px;
+      font-family:'Inter',sans-serif;
+      min-height:100vh;
+      background:#f5f0e8 url('bg.jpg') center/cover fixed;
       display:flex;
       flex-direction:column;
       align-items:center;
+      justify-content:center;
+      padding:40px 20px;
     }
-    h1{margin:0 0 10px;font-size:28px}
-    p{margin:0 0 30px;color:var(--muted)}
-    .grid{
-      display:grid;
-      gap:20px;
-      width:100%;
-      max-width:900px;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(245,240,232,0.80);
+      pointer-events:none;
+      z-index:0;
     }
-    .card{
-      background:var(--card);
-      padding:20px;
-      border-radius:var(--radius);
-      text-decoration:none;
-      color:inherit;
-      box-shadow:var(--shadow);
-      transition:.2s;
+    .wrapper{
+      position:relative;
+      z-index:1;
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
+      align-items:center;
+      width:100%;
+      max-width:1000px;
     }
-    .card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 16px 32px rgba(0,0,0,.6);
+    header{
+      text-align:center;
+      margin-bottom:52px;
     }
-    .title{
+    h1{
+      font-family:'Caveat',cursive;
+      font-size:54px;
+      font-weight:600;
+      color:#1a1a1a;
+      letter-spacing:-1px;
+      line-height:1.1;
+      text-shadow:1px 2px 0 rgba(255,255,255,0.6);
+    }
+    .subtitle{
+      font-size:15px;
+      color:#555;
+      margin-top:8px;
+      font-style:italic;
+    }
+    .folders{
+      display:flex;
+      flex-wrap:wrap;
+      gap:36px;
+      justify-content:center;
+      width:100%;
+    }
+    .folder-btn{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      cursor:pointer;
+      text-decoration:none;
+      gap:14px;
+      width:165px;
+      transition:transform 0.18s ease,filter 0.18s ease;
+      border:none;
+      background:transparent;
+      padding:0;
+    }
+    .folder-btn:hover{
+      transform:translateY(-8px) scale(1.05);
+      filter:drop-shadow(0 10px 22px rgba(90,130,190,0.4));
+    }
+    .folder-icon{
+      width:120px;
+      height:auto;
+      filter:drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+    }
+    .folder-label{
+      font-family:'Caveat',cursive;
       font-size:18px;
       font-weight:600;
-      margin-bottom:8px;
-    }
-    .desc{
-      font-size:14px;
-      color:var(--muted);
+      color:#1a1a1a;
+      text-align:center;
+      line-height:1.3;
+      max-width:150px;
+      background:rgba(255,255,255,0.60);
+      padding:5px 10px;
+      border-radius:6px;
+      backdrop-filter:blur(3px);
     }
     footer{
-      margin-top:40px;
+      margin-top:64px;
       font-size:12px;
-      color:var(--muted);
+      color:#777;
+      font-style:italic;
+      position:relative;
+      z-index:1;
     }
   </style>
 </head>
 <body>
-  <h1>GuilTeach</h1>
-  <p>Aprende sobre el audio a través de micrositios interactivos</p>
+<div class="overlay"></div>
+<div class="wrapper">
+  <header>
+    <h1>GuilTeach</h1>
+    <p class="subtitle">Selecciona un área para explorar sus herramientas interactivas</p>
+  </header>
+  <div class="folders">
 
-  <div class="grid">
-    <!-- Onda π -->
-    <a class="card" href="https://onda-pi.vercel.app" target="_blank">
-      <div class="title">Frente de Ondas π</div>
-      <div class="desc">Visualiza como se genera y se comporta un frente de ondas.</div>
+    <a class="folder-btn" href="#acustica">
+      <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1a" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#a8d8f0"/><stop offset="100%25" style="stop-color:#6aafe0"/></linearGradient>
+          <linearGradient id="g1b" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#88c4ec"/><stop offset="100%25" style="stop-color:#4e96cc"/></linearGradient>
+        </defs>
+        <path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g1a)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g1b)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/>
+      </svg>
+      <span class="folder-label">Acústica Arquitectónica</span>
     </a>
 
-    <!-- Fase -->
-    <a class="card" href="https://fase-opal.vercel.app" target="_blank">
-      <div class="title">Suma de dos ondas y Relación de fase</div>
-      <div class="desc">Explora como se suman o cancelan dos ondas idénticas.</div>
+    <a class="folder-btn" href="#ajustes">
+      <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g2a" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#a8d8f0"/><stop offset="100%25" style="stop-color:#6aafe0"/></linearGradient>
+          <linearGradient id="g2b" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#88c4ec"/><stop offset="100%25" style="stop-color:#4e96cc"/></linearGradient>
+        </defs>
+        <path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g2a)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g2b)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/>
+      </svg>
+      <span class="folder-label">Ajustes de Equipos de Sonido</span>
     </a>
 
-    <!-- Conversión -->
-    <a class="card" href="https://adconversions-delta.vercel.app" target="_blank">
-      <div class="title">Conversión A/D </div>
-      <div class="desc">Experimenta como funciona la conversión de audio analógico a digital.</div>
+    <a class="folder-btn" href="#fundamentos">
+      <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g3a" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#a8d8f0"/><stop offset="100%25" style="stop-color:#6aafe0"/></linearGradient>
+          <linearGradient id="g3b" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#88c4ec"/><stop offset="100%25" style="stop-color:#4e96cc"/></linearGradient>
+        </defs>
+        <path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g3a)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g3b)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/>
+      </svg>
+      <span class="folder-label">Fundamentos del Sonido</span>
     </a>
 
-    <!-- Vinilos v2 -->
-    <a class="card" href="https://vinilosv2.vercel.app" target="_blank">
-      <div class="title">Vinilos</div>
-      <div class="desc">Aplicacación de ayuda para la sincronización de vinilos con distintos bpm.</div>
+    <a class="folder-btn" href="#djs">
+      <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g4a" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#a8d8f0"/><stop offset="100%25" style="stop-color:#6aafe0"/></linearGradient>
+          <linearGradient id="g4b" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#88c4ec"/><stop offset="100%25" style="stop-color:#4e96cc"/></linearGradient>
+        </defs>
+        <path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g4a)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g4b)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/>
+      </svg>
+      <span class="folder-label">Herramientas para DJ's</span>
     </a>
 
-    <!-- Resto de miniwebs -->
-    <a class="card" href="https://onda2armonicos.vercel.app" target="_blank">
-      <div class="title">Forma de Onda</div>
-      <div class="desc">Visualiza como se genera la forma onda con la suma de dos ondas de distinta frecuencia.</div>
+    <a class="folder-btn" href="#instalaciones">
+      <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g5a" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#a8d8f0"/><stop offset="100%25" style="stop-color:#6aafe0"/></linearGradient>
+          <linearGradient id="g5b" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:#88c4ec"/><stop offset="100%25" style="stop-color:#4e96cc"/></linearGradient>
+        </defs>
+        <path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g5a)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g5b)" stroke="#4080b0" stroke-width="1.5"/>
+        <rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/>
+      </svg>
+      <span class="folder-label">Instalaciones de Equipos de Sonido</span>
     </a>
 
-    <a class="card" href="https://curvadefase.vercel.app" target="_blank">
-      <div class="title">Curva de Fase</div>
-      <div class="desc">Aprende a leer y analizar curvas de fase.</div>
-    </a>
-
-    <a class="card" href="https://tabladesfase.vercel.app" target="_blank">
-      <div class="title">Tabla de Fase</div>
-      <div class="desc">Introduce un retardo entre dos señales y analiza el desfase en amplio rango de frecuencias.</div>
-    </a>
-
-    <a class="card" href="https://graficapresionatomo.vercel.app" target="_blank">
-      <div class="title">Gráfica Presión Átomo</div>
-      <div class="desc">Aprende a interpretar la gráfica de forma de onda que usamos para representar el sonido.</div>
-    </a>
-
-    <a class="card" href="https://visualizadordefase3.vercel.app" target="_blank">
-      <div class="title">Visualizador de Fase</div>
-      <div class="desc">Observa el comportamiento de los átomos de sonido ante el desfase entre frentes de onda.</div>
-    </a>
   </div>
-
-  <footer>
-    © <span id="yr"></span> GuilTeach — Aprende sobre el audio
-  </footer>
-
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+</div>
+<footer>© <span id="yr"></span> GuilTeach — Aprende sobre el audio</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
